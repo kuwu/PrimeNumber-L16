@@ -9,8 +9,11 @@ package com.polytop;
 
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PNumber {
+  Scanner scan = new Scanner(System.in);
+
 
   final static Integer upperBounds = 1000;
 
@@ -25,10 +28,11 @@ public class PNumber {
 
     //check if input is a multiple of 2
     if ((input >= 1) && (input <= getMaxIndex())) {
-      return true;
 
+     return true;
+    } else {
+      System.out.println("Please re-enter a number between 1 and 100");
     }
-
     return false;
   }
 
@@ -39,9 +43,10 @@ public class PNumber {
     if (n % 2 == 0) {
       return n == 2;
     }
-    if (n == 9) {
-        n = n;
-    }
+//    checking for problem with no = before (int)
+//    if (n == 9) {
+//        n = n;
+//    }
     for (int i = 3; i <= (int) (Math.sqrt( n ) + 0.5); i += 2) {
       if (n % i == 0) {
         return false;
@@ -60,7 +65,7 @@ public class PNumber {
       }
 
     }
-       // TODO finish calling the prime number position
+       // TODO finish vaildation
   }
 
 }
